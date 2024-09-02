@@ -5,6 +5,9 @@ import  UserDetails from './Componentes/UserDetails';
 import  Task from './Componentes/Task';
 import  Toggletext from './Componentes/ToggleText';
 import  DynamicForm from './Componentes/DynamicForm';
+import  ClickCounter from './Componentes/ClickCounter';
+import  RegistrationForm from './Componentes/RegistrationForm';
+import ThemeSwitcher from './Componentes/ThemeSwitcher'
 
 export default function App() {
   return (
@@ -16,6 +19,10 @@ export default function App() {
       <Text style={styles.text}>2. Uso de useState</Text>
       <Toggletext />
       <DynamicForm />
+      <ClickCounter />
+      <Text style={styles.text}>3. Eventos con botones</Text>
+      <RegistrationForm />
+      <ThemeSwitcher />
       <StatusBar style="auto" />
     </View>
   );
@@ -24,7 +31,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'lightblue',
+    backgroundColor: StyleSheet === 'light' ? 'black' : 'white',
     alignItems: 'center',
     justifyContent: 'center',
   },

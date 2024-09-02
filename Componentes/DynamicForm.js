@@ -2,16 +2,16 @@ import React, {useState} from "react";
 import { View, Text, Button, TextInput } from "react-native";
 
 const dynamicForm = () =>{
-    const[isVisible,setIsVisible] = useState(false);
     const[inputValue, setInputValue] = useState('');
+    const [savedText, setSavedText] = useState('');
 
     return(
         <View>
-            <TextInput value={inputValue}
-            onChangeText={text => setInputValue(text)}
-            placeholder="Escriba aqui" />
-            <Button title="Listo" onPress={() => setIsVisible(!isVisible)}/>
-            {isVisible && <Text>Usted escribió: {inputValue}</Text>}
+            <TextInput placeholder="Escriba aqui"
+            value={inputValue}
+            onChangeText={text => setInputValue(text)}/>
+            <Button title="Listo" onPress={() => setSavedText(inputValue)}/>
+            <Text>2. Usted escribió: {savedText}</Text>
         </View>
     );
 }
