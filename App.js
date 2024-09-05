@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View,Button} from 'react-native';
-import React, {useState} from 'react';
+import { StyleSheet, Text, View, Button} from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import Greeting from './Componentes/Greeting';
 import  UserDetails from './Componentes/UserDetails';
 import  Task from './Componentes/Task';
@@ -9,24 +10,11 @@ import  DynamicForm from './Componentes/DynamicForm';
 import  ClickCounter from './Componentes/ClickCounter';
 import  RegistrationForm from './Componentes/RegistrationForm';
 import ThemeSwitcher from './Componentes/ThemeSwitcher';
-import greeting from './Componentes/Greeting';
+import Topper from './Componentes/Topper';
 
+const Stack = createStackNavigator();
 
-const HomeScreen = ({ onNavigate }) => {
-  return (
-    <View>
-      <Text>Home Screen</Text>
-      <Button title="Go to Example" onPress={onNavigate} />
-    </View>
-  );
-};
-
-export default function App() {
-  const [currentScreen, setCurrentScreen] = useState('Home');
-
-  const handleNavigate = () => {
-    setCurrentScreen('Greeting');
-  };
+export default function App({}) {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>1. Paso de Parámetros a Componentes</Text>
@@ -39,13 +27,15 @@ export default function App() {
       <ClickCounter />
       <Text style={styles.text}>3. Eventos con botones</Text>
       <RegistrationForm />
-      <ThemeSwitcher />
-      {currentScreen === 'Home' ? (
-        <HomeScreen onNavigate={handleNavigate} />
-      ) : (
-        <Greeting name="Steven"/>
-      )}      
+      <ThemeSwitcher />   
       <StatusBar style="auto" />
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Home" component={Topper} />
+          <Stack.Screen name="Details" component={RegistrationForm} />
+        </Stack.Navigator>
+      </NavigationContainer>
+      <Topper/>
     </View>
   );
 }
@@ -53,7 +43,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: StyleSheet === 'light' ? 'black' : 'white',
+    backgroundColor: 'lightblue',
     alignItems: 'center',
     justifyContent: 'center',
   },

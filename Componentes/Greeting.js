@@ -1,10 +1,13 @@
-import {Text} from 'react-native';
+import React from 'react';
+import { View, Text} from 'react-native';
 
 
-    const greeting = ({ name }) =>{
+    const Greeting = ({ name }) =>{
         return (
-            <Text>1. Hola {name}!</Text>
+            <View>
+                <Text>1. Hola {name}!</Text>
+            </View>
         );
     }
-    export default greeting;
+    export default Greeting;
 

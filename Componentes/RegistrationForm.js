@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { View, Button,Text,TextInput } from "react-native";
 
-const registrationForm = () =>{
+const RegistrationForm = () =>{
     const[nameValue,setNameValue] = useState('');
     const[emailValue,setEmailValue] = useState('');
     const[passValue,setPassValue] = useState('');
@@ -28,4 +28,4 @@ const registrationForm = () =>{
         </View>
     );
 }
-export default registrationForm;
+export default RegistrationForm;
