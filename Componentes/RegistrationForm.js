@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import { View, Button,Text,TextInput } from "react-native";
 
 const RegistrationForm = () =>{
+    const[isVisible,setIsVisible] = useState(true);
     const[nameValue,setNameValue] = useState('');
     const[emailValue,setEmailValue] = useState('');
     const[passValue,setPassValue] = useState('');
@@ -11,16 +12,17 @@ const RegistrationForm = () =>{
 
     return(
         <View>
-            <TextInput placeholder="Nombre"
+            {isVisible &&<TextInput placeholder="Nombre"
             value={nameValue}
-            onChangeText={text => setNameValue(text)}/>
-            <TextInput placeholder="Correo Electrónico"
+            onChangeText={text => setNameValue(text)}/>}
+            {isVisible &&<TextInput placeholder="Correo Electrónico"
             value={emailValue}
-            onChangeText={text => setEmailValue(text)}/>
-            <TextInput placeholder="Contraseña"
+            onChangeText={text => setEmailValue(text)}/>}
+            {isVisible &&<TextInput secureTextEntry={true} 
+            placeholder="Contraseña"
             value={passValue}
-            onChangeText={text => setPassValue(text)}/>
-            <Button title="Registro" onPress={() =>setSavedName(nameValue)&setSavedEmail(emailValue)&setSavedPass(passValue)}/>
+            onChangeText={text => setPassValue(text)}/>}
+            {isVisible &&<Button title="Registro" onPress={() =>setSavedName(nameValue)&setSavedEmail(emailValue)&setSavedPass(passValue)&setIsVisible(!isVisible)}/>}
             <Text>1. Usuario Registrado</Text>
             <Text>User: {savedName}</Text>
             <Text>Email: {savedEmail}</Text>

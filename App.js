@@ -1,7 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button} from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { StyleSheet, Text, View} from 'react-native';
 import Greeting from './Componentes/Greeting';
 import  UserDetails from './Componentes/UserDetails';
 import  Task from './Componentes/Task';
@@ -10,9 +8,6 @@ import  DynamicForm from './Componentes/DynamicForm';
 import  ClickCounter from './Componentes/ClickCounter';
 import  RegistrationForm from './Componentes/RegistrationForm';
 import ThemeSwitcher from './Componentes/ThemeSwitcher';
-import Topper from './Componentes/Topper';
-
-const Stack = createStackNavigator();
 
 export default function App({}) {
   return (
@@ -29,13 +24,6 @@ export default function App({}) {
       <RegistrationForm />
       <ThemeSwitcher />   
       <StatusBar style="auto" />
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name="Home" component={Topper} />
-          <Stack.Screen name="Details" component={RegistrationForm} />
-        </Stack.Navigator>
-      </NavigationContainer>
-      <Topper/>
     </View>
   );
 }
