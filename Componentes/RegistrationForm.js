@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { View, Button,Text,TextInput } from "react-native";
+import { View, Button,Text,TextInput ,StyleSheet} from "react-native";
 
 const RegistrationForm = () =>{
     const[isVisible,setIsVisible] = useState(true);
@@ -11,7 +11,7 @@ const RegistrationForm = () =>{
     const[savedPass,setSavedPass] = useState('');
 
     return(
-        <View>
+        <View style={styles.container}>
             {isVisible &&<TextInput placeholder="Nombre"
             value={nameValue}
             onChangeText={text => setNameValue(text)}/>}
@@ -31,3 +31,17 @@ const RegistrationForm = () =>{
     );
 }
 export default RegistrationForm;
+
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: 'lightblue',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    text: {
+      fontSize: 20,
+      color: 'red',
+      fontStyle: 'italic'
+    },
+  });

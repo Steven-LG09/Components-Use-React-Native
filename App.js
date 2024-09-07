@@ -8,10 +8,22 @@ import  DynamicForm from './Componentes/DynamicForm';
 import  ClickCounter from './Componentes/ClickCounter';
 import  RegistrationForm from './Componentes/RegistrationForm';
 import ThemeSwitcher from './Componentes/ThemeSwitcher';
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import HomeScreen from './Componentes/Home';
+
+const Stack = createNativeStackNavigator()
 
 export default function App({}) {
   return (
-    <View style={styles.container}>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name='Home' component={HomeScreen}/>
+        <Stack.Screen name='Registration' component={RegistrationForm}/>
+      </Stack.Navigator>
+    </NavigationContainer>
+    /**<View style={styles.container}>
       <Text style={styles.text}>1. Paso de Parámetros a Componentes</Text>
       <Greeting name="Steven"/>
       <UserDetails nombre="Paola" edad="20" ocupacion="Estudiante"/>
@@ -24,7 +36,7 @@ export default function App({}) {
       <RegistrationForm />
       <ThemeSwitcher />   
       <StatusBar style="auto" />
-    </View>
+    </View>**/
   );
 }
 
