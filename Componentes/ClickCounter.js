@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { View,Button,Text } from "react-native";
 
-const clickCounter = () =>{
+const ClickCounter = () =>{
     const[count,setCount] =useState(0);
 
     return(
@@ -11,4 +11,4 @@ const clickCounter = () =>{
         </View>
     );
 }
-export default clickCounter;
+export default ClickCounter;

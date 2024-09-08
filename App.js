@@ -1,5 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View} from 'react-native';
+import { View,Text,StyleSheet } from 'react-native';
 import Greeting from './Componentes/Greeting';
 import  UserDetails from './Componentes/UserDetails';
 import  Task from './Componentes/Task';
@@ -18,38 +17,35 @@ const Stack = createNativeStackNavigator()
 export default function App({}) {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName='Home'>
         <Stack.Screen name='Home' component={HomeScreen}/>
-        <Stack.Screen name='Registration' component={RegistrationForm}/>
+        <Stack.Screen name='Greeting' component={Greeting}/>
+        <Stack.Screen name='UserDetails' component={UserDetails}/>
+        <Stack.Screen name='Task' component={Task}/>
+        <Stack.Screen name='ToggleText' component={Toggletext}/>
+        <Stack.Screen name='ClickCounter' component={ClickCounter}/>
+        <Stack.Screen name='DynamicForm' component={DynamicForm}/>
+        <Stack.Screen name='RegistrationForm' component={RegistrationForm}/>
       </Stack.Navigator>
+      <View style={styles.container}>
+        <Text style={styles.text}>Pantalla App.js</Text>
+      </View>
     </NavigationContainer>
-    /**<View style={styles.container}>
-      <Text style={styles.text}>1. Paso de Parámetros a Componentes</Text>
-      <Greeting name="Steven"/>
-      <UserDetails nombre="Paola" edad="20" ocupacion="Estudiante"/>
-      <Task />
-      <Text style={styles.text}>2. Uso de useState</Text>
-      <Toggletext />
-      <DynamicForm />
-      <ClickCounter />
-      <Text style={styles.text}>3. Eventos con botones</Text>
-      <RegistrationForm />
-      <ThemeSwitcher />   
-      <StatusBar style="auto" />
-    </View>**/
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: 'lightblue',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: 'black',
+    textAlign: 'center',
+    marginLeft: 20,
+    marginRight: 20,
   },
   text: {
-    fontSize: 20,
+    textAlign: 'center',
+    fontSize: 15,
     color: 'red',
     fontStyle: 'italic'
   },
 });
+

@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { View, Text, Button, TextInput } from "react-native";
 
-const dynamicForm = () =>{
+const DynamicForm = () =>{
     const[inputValue, setInputValue] = useState('');
     const [savedText, setSavedText] = useState('');
 
@@ -16,4 +16,4 @@ const dynamicForm = () =>{
     );
 }
 
-export default dynamicForm;
+export default DynamicForm;

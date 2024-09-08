@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text} from 'react-native';
 
 
-    const Greeting = ({ name }) =>{
+    const Greeting = ({ name ='Steven' }) =>{
         return (
             <View>
                 <Text>1. Hola {name}!</Text>
