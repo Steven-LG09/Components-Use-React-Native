@@ -1,7 +1,8 @@
 import { View,Text,StyleSheet,Button} from "react-native";
 
 
-export default function HomeScreen({navigation}){
+export default function HomeScreen({navigation, route}){
+  const {ahua} = route.params;
     return(
       <View style={styles.container}>
         <Text style={styles.text}>1. Paso de Parametros a Componentes</Text>
@@ -14,6 +15,7 @@ export default function HomeScreen({navigation}){
         <Button title="ClickCounter.js" onPress={()=> navigation.navigate("ClickCounter")}/>
         <Text style={styles.text}>3. Eventos con Botones</Text>
         <Button title="RegistrationForm.js" onPress={()=> navigation.navigate("RegistrationForm")}/>
+        <Text>{ahua}</Text> 
       </View>
     );
 }

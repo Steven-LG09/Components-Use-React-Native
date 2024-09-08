@@ -1,8 +1,7 @@
 import React, {useState} from "react";
 import { View, Button,Text,TextInput ,StyleSheet} from "react-native";
 
-const RegistrationForm = () =>{
-    const[isVisible,setIsVisible] = useState(true);
+const RegistrationForm = ({navigation}) =>{
     const[nameValue,setNameValue] = useState('');
     const[emailValue,setEmailValue] = useState('');
     const[passValue,setPassValue] = useState('');
@@ -12,21 +11,17 @@ const RegistrationForm = () =>{
 
     return(
         <View style={styles.container}>
-            {isVisible &&<TextInput placeholder="Nombre"
+            <TextInput placeholder="Nombre"
             value={nameValue}
-            onChangeText={text => setNameValue(text)}/>}
-            {isVisible &&<TextInput placeholder="Correo Electrónico"
+            onChangeText={text => setNameValue(text)}/>
+            <TextInput placeholder="Correo Electrónico"
             value={emailValue}
-            onChangeText={text => setEmailValue(text)}/>}
-            {isVisible &&<TextInput secureTextEntry={true} 
+            onChangeText={text => setEmailValue(text)}/>
+            <TextInput secureTextEntry={true} 
             placeholder="Contraseña"
             value={passValue}
-            onChangeText={text => setPassValue(text)}/>}
-            {isVisible &&<Button title="Registro" onPress={() =>setSavedName(nameValue)&setSavedEmail(emailValue)&setSavedPass(passValue)&setIsVisible(!isVisible)}/>}
-            <Text>1. Usuario Registrado</Text>
-            <Text>User: {savedName}</Text>
-            <Text>Email: {savedEmail}</Text>
-            <Text>Password: {savedPass}</Text>
+            onChangeText={text => setPassValue(text)}/>
+            <Button title="Registro" onPress={() =>setSavedName(nameValue)&setSavedEmail(emailValue)&setSavedPass(passValue)&navigation.navigate("Home",{nombre: savedName})}/>
         </View>
     );
 }
