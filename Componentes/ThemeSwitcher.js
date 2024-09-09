@@ -1,10 +1,10 @@
 import React, {useState} from "react";
 import { View,Button,StyleSheet } from "react-native";
 
-const themeSwicher = () =>{
-    const [theme,setTheme] = useState('lightblue')
+const ThemeSwicher = ({navigation}) =>{
+    const [theme,setTheme] = useState('darkblue')
     const toggleTheme = () =>{
-        const newColor = theme === 'lightblue' ? 'white' : 'lightblue';
+        const newColor = theme === 'darkblue' ? 'lightblue' : 'darkblue';
         setTheme(newColor);
     }
     return(
@@ -14,7 +14,7 @@ const themeSwicher = () =>{
     );
 }
 
-export default themeSwicher;
+export default ThemeSwicher;
 
 const styles = StyleSheet.create({
     container: {

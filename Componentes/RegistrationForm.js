@@ -5,9 +5,6 @@ const RegistrationForm = ({navigation}) =>{
     const[nameValue,setNameValue] = useState('');
     const[emailValue,setEmailValue] = useState('');
     const[passValue,setPassValue] = useState('');
-    const[savedName,setSavedName] = useState('');
-    const[savedEmail,setSavedEmail] = useState('');
-    const[savedPass,setSavedPass] = useState('');
 
     return(
         <View style={styles.container}>
@@ -21,7 +18,7 @@ const RegistrationForm = ({navigation}) =>{
             placeholder="Contraseña"
             value={passValue}
             onChangeText={text => setPassValue(text)}/>
-            <Button title="Registro" onPress={() =>setSavedName(nameValue)&setSavedEmail(emailValue)&setSavedPass(passValue)&navigation.navigate("Home",{nombre: savedName})}/>
+            <Button title="Registro" onPress={() => navigation.navigate("Home",{nameValue,emailValue,passValue})}/>
         </View>
     );
 }
