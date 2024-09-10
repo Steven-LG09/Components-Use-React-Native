@@ -32,6 +32,7 @@ export default function HomeScreen({route, navigation}){
         <Text style={styles.text}>4. Paso de parametros de Padre a Hijo</Text>
         <Button title="ParentCounter.js" onPress={()=> navigation.navigate("ParentCounter")}/>
         <Button title="ImageGallery.js" onPress={()=> navigation.navigate("ImageGallery")}/>
+        <Button title="Game.js" onPress={()=> navigation.navigate("Game")}/>
       </ScrollView>
     );
 }

@@ -11,6 +11,8 @@ import ParentCounter from './Componentes/ParentCounter';
 import ChildCounter from './Componentes/ChildCounter';
 import ImageGallery from './Componentes/ImageGallery';
 import ImageList from './Componentes/ImageList';
+import Game from './Componentes/Game';
+import GuessForm from './Componentes/GuessForm';
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -36,6 +38,8 @@ export default function App({}) {
         <Stack.Screen name='ChildCounter' component={ChildCounter}/>
         <Stack.Screen name='ImageGallery' component={ImageGallery}/>
         <Stack.Screen name='ImageList' component={ImageList}/>
+        <Stack.Screen name='Game' component={Game}/>
+        <Stack.Screen name='GuessForm' component={GuessForm}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
